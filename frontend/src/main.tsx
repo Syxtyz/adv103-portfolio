@@ -8,7 +8,6 @@ import HomePage from './pages/home.tsx'
 import ExperiencePage from './pages/experience.tsx'
 import JournalPage from './pages/journal.tsx'
 import SkillPage from './pages/skill.tsx'
-import { ScrollArea } from './components/ui/scroll-area.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

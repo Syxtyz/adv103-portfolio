@@ -1,7 +1,6 @@
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ModeToggle } from "../navigation/mode-toggle";
 
 interface TooltipIconProps {
     label: string;

@@ -1,10 +1,8 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { BookTextIcon, HomeIcon, LayersIcon, MenuIcon, TrendingUpIcon, X, XIcon } from "lucide-react"
-import { ModeToggle } from "./mode-toggle"
-import { Link } from "react-router"
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
+import { BookTextIcon, HomeIcon, LayersIcon, MenuIcon, TrendingUpIcon, XIcon } from "lucide-react"
 import ToolTipIcon from "../custom-ui/toolTipIcon"
+import { ModeToggle } from "./mode-toggle"
 
 export function BottomNavMenu() {
     const [open, setOpen] = useState(true)
