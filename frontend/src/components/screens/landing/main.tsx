@@ -1,17 +1,17 @@
 import { FacebookIcon, GithubIcon, MailIcon } from "lucide-react";
-import { Separator } from "../ui/separator";
-import { Button } from "../ui/button";
+import { Separator } from "../../ui/separator";
+import { Button } from "../../ui/button";
 
-export default function MainContent() {
+export default function LandingContent() {
     return (
-        <main className="flex gap-12 items-center h-screen px-36">
+        <main className="h-screen flex gap-12 items-center">
             <div className="flex gap-12">
                 <div className="flex flex-col gap-6">
                     <img className="w-70 h-70 self-center"></img>
                     <p className="text-center text-primary font-bold">Cejie Refamonte</p>
                     <p className="text-center text-primary font-bold">Full Stack Developer</p>
                     <p className="text-muted-foreground text-justify">I build full-stack applications and explore web, mobile, and networking projects.</p>
-                    <Button className="w-fit px-12 self-center">Download CV</Button>
+                    <Button className="w-fit px-12 self-center" onClick={() => window.open("/resume.pdf", "_blank")}>Resume</Button>
                 </div>
                 <div className="flex flex-col gap-6">
                     <section className="grid gap-6">
@@ -25,9 +25,9 @@ export default function MainContent() {
 
                         <div className="flex gap-6 items-center">
                             <p className="text-muted-foreground">Lets connect! Find me on these platforms:</p>
-                            <Button variant="outline" className="w-fit px-12"><MailIcon />Email</Button>
-                            <Button variant="outline" className="w-fit px-12"><FacebookIcon />Facebook</Button>
-                            <Button variant="outline" className="w-fit px-12"><GithubIcon />Github</Button>
+                            <Button variant="outline" className="w-fit px-12 text-black dark:text-white"><MailIcon />Email</Button>
+                            <Button variant="outline" className="w-fit px-12 text-black dark:text-white"><FacebookIcon />Facebook</Button>
+                            <Button variant="outline" className="w-fit px-12 text-black dark:text-white"><GithubIcon />Github</Button>
                         </div>
                     </section>
                 </div>

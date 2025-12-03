@@ -1,6 +1,6 @@
 import { Moon, Sun } from "lucide-react"
 import { Button } from "../ui/button"
-import { useTheme } from "../../lib/theme-provider"
+import { useTheme } from "../ui/theme-provider"
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
 
 export function ModeToggle() {
@@ -14,13 +14,14 @@ export function ModeToggle() {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="ghost" className="rounded-full hover:border border-black" onClick={toggleTheme}>
+        <Button variant="default" size={"icon-lg"} className="absolute bottom-0 left-0 rounded-tr-full border border-transparent hover:border-black dark:hover:border-white" onClick={toggleTheme}>
           <Sun
-            className={`h-[1.2rem] w-[1.2rem] ${theme === "light" ? "scale-100 rotate-0" : "scale-0 -rotate-90"
+            className={`absolute bottom-1/5 left-1/5 ${theme === "light" ? "scale-100 rotate-0" : "scale-0 -rotate-90"
               }`}
           />
           <Moon
-            className={`absolute h-[1.2rem] w-[1.2rem] ${theme === "dark" ? "scale-100 rotate-0" : "scale-0 rotate-90"
+            className={`absolute bottom-1/5 left-1/5 ${theme === "dark" ? "scale-100 rotate-0" : "scale-0 rotate-90"
+
               }`}
           />
         </Button>
