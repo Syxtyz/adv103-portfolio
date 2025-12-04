@@ -1,14 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { FacebookLink, GithubLink } from "@/lib/links";
-import { FacebookIcon, GithubIcon, MailIcon } from "lucide-react";
+import MySocials from "@/components/reusableUI/socials"
+import { Separator } from "@/components/ui/separator"
 
 export default function AboutSection() {
     return (
         <div className="flex flex-col gap-6 flex-2">
             <section className="grid gap-6 text-center lg:text-left">
-                
-                <p className="text-2xl font-bold text-primary">About me:</p>
+
+                <p className="text-2xl font-bold text-primary">About me</p>
                 <p className="text-muted-foreground">
                     I am a passionate explorer of <strong>technology</strong>. Whether it is building
                     <strong> web apps</strong>, <strong>mobile apps</strong>, or diving into
@@ -42,21 +40,7 @@ export default function AboutSection() {
                     <p className="text-muted-foreground whitespace-nowrap">
                         Let’s connect!
                     </p>
-
-                    <Button variant="outline" className="flex gap-2">
-                        <MailIcon size={16} />
-                        Email
-                    </Button>
-
-                    <Button variant="outline" className="flex gap-2" onClick={() => window.open(FacebookLink, "_blank")}>
-                        <FacebookIcon size={16} />
-                        Facebook
-                    </Button>
-
-                    <Button variant="outline" className="flex gap-2" onClick={() => window.open(GithubLink, "_blank")}>
-                        <GithubIcon size={16} />
-                        Github
-                    </Button>
+                    <MySocials/>
                 </div>
             </section>
         </div>

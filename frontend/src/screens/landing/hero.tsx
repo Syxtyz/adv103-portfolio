@@ -19,7 +19,7 @@ export default function HeroSection() {
                     I build and explore web & mobile applications.
                 </p>
                 <div className="flex w-60 justify-center">
-                    <Button variant={"secondary"} className="cursor-pointer" onClick={() => window.open("/resume.pdf", "_blank")}>
+                    <Button variant={"default"} className="cursor-pointer" onClick={() => window.open("/resume.pdf", "_blank")}>
                         Resume
                         <ArrowUpRight />
                     </Button>
