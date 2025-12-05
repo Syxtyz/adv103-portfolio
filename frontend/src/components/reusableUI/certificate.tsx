@@ -28,7 +28,7 @@ export function CertificateForm({ title, certificate, date, imageSrc }: Certific
             onMouseEnter={() => !isMobile && setHovered(true)}
             onMouseLeave={() => !isMobile && setHovered(false)}
         >
-            <div className="grid gap-2 md:cursor-pointer">
+            <div className="grid gap-2 md:cursor-pointer md:opacity-50 hover:opacity-100">
                 <div>
                     <p className="font-semibold text-sm">{title}</p>
                     <p className="text-xs">Certificate of {certificate}</p>
@@ -36,7 +36,7 @@ export function CertificateForm({ title, certificate, date, imageSrc }: Certific
 
                 {imageSrc && (
                     <div
-                        className="flex gap-2 border w-fit px-2 py-1 rounded-lg items-center sm:cursor-pointer"
+                        className="flex gap-2 border w-fit px-2 py-1 rounded-lg items-center cursor-pointer md:cursor-default"
                         onClick={() => isMobile && setOpenMobile(true)}
                     >
                         <AwardIcon size={16} /> View Certificate
