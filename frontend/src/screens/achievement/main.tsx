@@ -1,6 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import TechStack from "./techstack"
+import TechStackSection from "./techstack"
 import { useState } from "react"
+import CertificateSection from "./certificates"
 
 export default function AchievementContent() {
     const [open, setOpen] = useState("item-1")
@@ -11,15 +12,15 @@ export default function AchievementContent() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className={`text-lg font-semibold py-2 px-4 cursor-pointer ${open === "item-1" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>Tech Stack</AccordionTrigger>
                     <AccordionContent className="flex flex-wrap gap-4 mt-4">
-                        <TechStack />
+                        <TechStackSection />
                     </AccordionContent>
                 </AccordionItem>
 
 
                 <AccordionItem value="item-2">
                     <AccordionTrigger  className={`text-lg font-semibold py-2 px-4 cursor-pointer ${open === "item-2" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>Certificates</AccordionTrigger>
-                    <AccordionContent className="mt-2">
-                        Test
+                    <AccordionContent>
+                        <CertificateSection/>
                     </AccordionContent>
                 </AccordionItem>
 

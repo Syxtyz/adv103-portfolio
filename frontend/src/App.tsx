@@ -2,22 +2,29 @@ import FooterContent from "./screens/footer"
 import LandingContent from "./screens/landing/main"
 import { ScrollArea } from "./components/ui/scroll-area"
 import AchievementContent from "./screens/achievement/main"
-import { useRef } from "react"
+import { useRef, useState } from "react"
+import { SplashScreen } from "./screens/splash"
 
+import { AnimatePresence } from "framer-motion"
 function App() {
+  const [isReady, setIsReady] = useState(false)
   const achievementRef = useRef<HTMLDivElement | null>(null)
 
   return (
     <ScrollArea className="h-screen lg:px-32 px-6">
-      <LandingContent scrollToAchievement={() => achievementRef.current?.scrollIntoView({ behavior: "smooth" })} />
-      {/* <ModeToggle /> */}
-      <div ref={achievementRef}>
-        <AchievementContent />
-      </div>
-      <FooterContent />
-      {/* Education Tour Journal with Photos
+      <AnimatePresence>
+        {!isReady && <SplashScreen onFinish={() => setIsReady(true)} />}
+        <LandingContent scrollToAchievement={() => achievementRef.current?.scrollIntoView({ behavior: "smooth" })} />
+        {/* <ModeToggle /> */}
+        <div ref={achievementRef}>
+          <AchievementContent />
+        </div>
+        <FooterContent />
+        {/* Education Tour Journal with Photos
       Certification
       Tech Stack */}
+
+      </AnimatePresence>
     </ScrollArea>
   )
 }

@@ -10,17 +10,17 @@ interface MySocialProps {
 export default function MySocials({ size = "default", variant = "outline"}: MySocialProps) {
     return (
         <>
-            <Button size={size} variant={variant} className="flex gap-2">
+            <Button size={size} variant={variant} className="flex gap-2 cursor-pointer">
                 <MailIcon size={16} />
                 {variant === "outline" && "Email"}
             </Button>
 
-            <Button size={size} variant={variant} className="flex gap-2" onClick={() => window.open(FacebookLink, "_blank")}>
+            <Button size={size} variant={variant} className="flex gap-2 cursor-pointer" onClick={() => window.open(FacebookLink, "_blank")}>
                 <FacebookIcon size={16} />
                 {variant === "outline" && "Facebook"}
             </Button>
 
-            <Button size={size} variant={variant} className="flex gap-2" onClick={() => window.open(GithubLink, "_blank")}>
+            <Button size={size} variant={variant} className="flex gap-2 cursor-pointer" onClick={() => window.open(GithubLink, "_blank")}>
                 <GithubIcon size={16} />
                 {variant === "outline" && "Github"}
             </Button>
