@@ -12,11 +12,10 @@ export default function AchievementContent() {
             <Accordion type="single" collapsible className="w-full" value={open} onValueChange={setOpen}>
                 <AccordionItem value="item-1">
                     <AccordionTrigger className={`text-lg font-semibold py-2 px-4 cursor-pointer ${open === "item-1" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>Tech Stack</AccordionTrigger>
-                    <AccordionContent className="flex flex-wrap gap-4 mt-4">
+                    <AccordionContent className="flex flex-wrap gap-4 mb-6">
                         <TechStackSection />
                     </AccordionContent>
                 </AccordionItem>
-
 
                 <AccordionItem value="item-2">
                     <AccordionTrigger className={`text-lg font-semibold py-2 px-4 cursor-pointer ${open === "item-2" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>Certificates</AccordionTrigger>
@@ -24,7 +23,6 @@ export default function AchievementContent() {
                         <CertificateSection />
                     </AccordionContent>
                 </AccordionItem>
-
 
                 <AccordionItem value="item-3">
                     <AccordionTrigger className={`py-2 px-4 cursor-pointer ${open === "item-3" ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>

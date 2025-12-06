@@ -6,6 +6,7 @@ import { useRef, useState } from "react"
 import { SplashScreen } from "./screens/splash"
 
 import { AnimatePresence } from "framer-motion"
+import MeetingContent from "./screens/meeting/main"
 function App() {
   const [isReady, setIsReady] = useState(false)
   const achievementRef = useRef<HTMLDivElement | null>(null)
@@ -19,6 +20,7 @@ function App() {
           <div ref={achievementRef}>
             <AchievementContent />
           </div>
+          <MeetingContent/>
           <FooterContent />
         </AnimatePresence>
       </div>

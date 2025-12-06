@@ -36,7 +36,7 @@ export function CertificateForm({ title, certificate, date, imageSrc }: Certific
 
                 {imageSrc && (
                     <div
-                        className="flex gap-2 border w-fit px-2 py-1 rounded-lg items-center cursor-pointer md:cursor-default"
+                        className="flex gap-2 w-fit px-2 py-1 rounded-lg items-center cursor-pointer md:cursor-default"
                         onClick={() => isMobile && setOpenMobile(true)}
                     >
                         <AwardIcon size={16} /> View Certificate
@@ -44,7 +44,7 @@ export function CertificateForm({ title, certificate, date, imageSrc }: Certific
 
                 )}
 
-                <p className="text-xs text-muted-foreground">Date issued: {date}</p>
+                <p className="mb-6 text-xs text-muted-foreground last">Date issued: {date}</p>
             </div>
 
             <AnimatePresence>

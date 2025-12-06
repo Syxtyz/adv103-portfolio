@@ -10,7 +10,7 @@ export default function LandingContent({ scrollToAchievement }: { scrollToAchiev
 
                 <AboutSection />
             </div>
-            <div className="relative bottom-0 grid justify-center opacity-75 cursor-pointer" onClick={scrollToAchievement}>
+            <div className="relative bottom-0 grid justify-center opacity-75 cursor-pointer mt-4 2xl:mt-0" onClick={scrollToAchievement}>
                 <span>Scroll Down</span>
                 <ChevronDown className="mx-auto" />
             </div>
