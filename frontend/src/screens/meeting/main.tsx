@@ -8,7 +8,7 @@ export default function MeetingContent() {
                     <p className="text-4xl font-semibold">Let's Connect</p>
                     <p className="text-muted-foreground text-md">Set up a meeting and take the next step toward achieving your project goals.</p>
                 </div>
-                <Button variant={"outline"} className="cursor-pointer">
+                <Button variant={"secondary"} className="cursor-pointer">
                     <p>Book a Meeting</p>
                 </Button>
             </div>

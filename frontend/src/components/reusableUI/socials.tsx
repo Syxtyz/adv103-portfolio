@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
-import { FacebookIcon, GithubIcon, InstagramIcon } from "lucide-react";
-import { FacebookLink, GithubLink, InstagramLink } from "@/lib/values/links";
+import { FacebookIcon, GithubIcon, InstagramIcon, LinkedinIcon } from "lucide-react";
+import { FacebookLink, GithubLink, InstagramLink, LinkedinLink } from "@/lib/values/links";
 
 interface MySocialProps {
     size?: "default" | "icon"
@@ -23,6 +23,11 @@ export default function MySocials({ size = "default", variant = "link"}: MySocia
             <Button size={size} variant={variant} className="flex gap-2 cursor-pointer" onClick={() => window.open(GithubLink, "_blank")}>
                 <GithubIcon size={16} />
                 {variant === "link" && "Github"}
+            </Button>
+
+            <Button size={size} variant={variant} className="flex gap-2 cursor-pointer" onClick={() => window.open(LinkedinLink, "_blank")}>
+                <LinkedinIcon size={16} />
+                {variant === "link" && "Linkedin"}
             </Button>
         </>
     )

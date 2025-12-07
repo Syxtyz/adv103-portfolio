@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { resume } from "@/lib/values/resume";
 import { ArrowUpRight } from "lucide-react";
 
 export default function HeroSection() {
@@ -19,9 +20,9 @@ export default function HeroSection() {
                     I build and explore web & mobile applications.
                 </p>
                 <div className="flex w-60 justify-center">
-                    <Button variant={"default"} className="cursor-pointer" onClick={() => window.open("/resume.pdf", "_blank")}>
+                    <Button variant={"secondary"} className="cursor-pointer group gap-1" onClick={() => window.open(resume, "_blank")}>
                         Resume
-                        <ArrowUpRight />
+                        <ArrowUpRight className="duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"/>
                     </Button>
                 </div>
             </div>
