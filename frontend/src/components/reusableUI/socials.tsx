@@ -9,7 +9,7 @@ interface MySocialProps {
 
 export default function MySocials({ size = "default", variant = "link"}: MySocialProps) {
     return (
-        <>
+        <div className="grid grid-cols-2 grid-rows-2 md:flex gap-8 md:gap-0">
             <Button size={size} variant={variant} className="flex gap-2 cursor-pointer" onClick={() => window.open(InstagramLink, "_blank")}>
                 <InstagramIcon size={16} />
                 {variant === "link" && "Instagram"}
@@ -29,6 +29,6 @@ export default function MySocials({ size = "default", variant = "link"}: MySocia
                 <LinkedinIcon size={16} />
                 {variant === "link" && "Linkedin"}
             </Button>
-        </>
+        </div>
     )
 }

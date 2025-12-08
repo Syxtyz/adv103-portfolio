@@ -11,7 +11,7 @@ function App() {
 
   return (
     <ScrollArea className="h-screen">
-      <div className="lg:px-32 px-6">
+      <div className="lg:px-32 md:px-6 w-screen">
           {!isReady && <SplashScreen onFinish={() => setIsReady(true)} />}
           <LandingContent scrollToAchievement={() => achievementRef.current?.scrollIntoView({ behavior: "smooth" })} />
           <div ref={achievementRef}>

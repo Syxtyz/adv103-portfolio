@@ -16,7 +16,7 @@ export default function HeroSection() {
                     <p className="text-primary font-bold text-xl">Cejie Refamonte</p>
                     <p className="text-primary font-bold text-lg">Software Developer</p>
                 </div>
-                <p className="text-muted-foreground max-w-sm">
+                <p className="text-muted-foreground w-40 md:w-fit">
                     I build and explore web & mobile applications.
                 </p>
                 <div className="flex w-60 justify-center">
