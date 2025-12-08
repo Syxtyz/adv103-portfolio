@@ -1,4 +1,6 @@
-import ContactModal from "./modal/contact";
+import { calLink } from "@/lib/values/links";
+import { Button } from "../ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 export default function MeetingContent() {
     return (
@@ -8,7 +10,10 @@ export default function MeetingContent() {
                     <p className="text-4xl font-semibold">Let's Connect</p>
                     <p className="text-muted-foreground text-md">Set up a meeting and take the next step toward achieving your project goals.</p>
                 </div>
-                <ContactModal/>
+                <Button className="cursor-pointer group gap-1" variant={"secondary"} onClick={() => window.open(calLink, "_blank")}>
+                    Resume
+                    <ArrowUpRight className="duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </Button>
             </div>
         </main>
     )
