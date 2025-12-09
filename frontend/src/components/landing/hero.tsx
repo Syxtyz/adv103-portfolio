@@ -20,9 +20,9 @@ export default function HeroSection() {
                     I build and explore web & mobile applications.
                 </p>
                 <div className="flex w-60 justify-center">
-                    <Button variant={"secondary"} className="cursor-pointer group gap-1" onClick={() => window.open(resume, "_blank")}>
+                    <Button className="cursor-pointer group gap-1" onClick={() => window.open(resume, "_blank")}>
                         Resume
-                        <ArrowUpRight className="duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"/>
+                        <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"/>
                     </Button>
                 </div>
             </div>

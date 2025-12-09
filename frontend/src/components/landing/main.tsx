@@ -11,7 +11,7 @@ export default function LandingContent({ scrollToAchievement }: { scrollToAchiev
 
                 <AboutSection />
             </div>
-            <div className="relative bottom-0 grid justify-center opacity-75 cursor-pointer mt-4 2xl:mt-0" onClick={scrollToAchievement}>
+            <div className="w-fit mx-auto relative bottom-0 grid justify-center opacity-75 cursor-pointer mt-4 2xl:mt-0" onClick={scrollToAchievement}>
                 <span>Scroll Down</span>
                 <motion.div className="mx-auto"
                     animate={{ y: [0, 5, 0] }}

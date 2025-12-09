@@ -6,9 +6,8 @@ export function SplashScreen({ onFinish }: { onFinish: () => void }) {
     const [step, setStep] = useState(0)
     const [loadedCount, setLoadedCount] = useState(0)
     const [typedText, setTypedText] = useState("")
-
+    const [showSkip, setShowSkip] = useState(false)
     const loadedRef = useRef(false)
-
     const allImages = [
         ...Predeparture,
         ...PLDT,
@@ -19,53 +18,67 @@ export function SplashScreen({ onFinish }: { onFinish: () => void }) {
         VitroJournal,
         JairosoftJournal,
         ErcJournal
-    ];
+    ]
+
+    useEffect(() => {
+        const t = setTimeout(() => setShowSkip(true), 3000)
+        return () => clearTimeout(t)
+    }, [])
+
+    const handleSkip = () => {
+        setStep(4)
+        window.setTimeout(onFinish, 100)
+    }
 
     useEffect(() => {
         if (loadedCount >= allImages.length) {
-            const firstText = "Done Loading Assets";
-            const secondText = "Welcome";
-            let index = 0;
-            let interval: any;
+            const firstText = "Done Loading Assets"
+            const secondText = "Welcome"
+
+            let index = 0
+            let interval: any
+
             interval = setInterval(() => {
-                setTypedText(firstText.slice(0, index + 1));
-                index++;
+                setTypedText(firstText.slice(0, index + 1))
+                index++
                 if (index === firstText.length) {
-                    clearInterval(interval);
+                    clearInterval(interval)
                     setTimeout(() => {
-                        let eraseIndex = firstText.length;
+                        let eraseIndex = firstText.length
                         interval = setInterval(() => {
-                            eraseIndex--;
-                            setTypedText(firstText.slice(0, eraseIndex));
+                            eraseIndex--
+                            setTypedText(firstText.slice(0, eraseIndex))
                             if (eraseIndex === 0) {
-                                clearInterval(interval);
-                                let wIndex = 0;
+                                clearInterval(interval)
+                                let wIndex = 0
                                 interval = setInterval(() => {
-                                    setTypedText(secondText.slice(0, wIndex + 1));
-                                    wIndex++;
+                                    setTypedText(secondText.slice(0, wIndex + 1))
+                                    wIndex++
                                     if (wIndex === secondText.length)
-                                        clearInterval(interval);
-                                }, 80);
+                                        clearInterval(interval)
+                                }, 80)
                             }
-                        }, 40);
-                    }, 1000);
+                        }, 40)
+                    }, 1000)
                 }
-            }, 70);
-            return () => clearInterval(interval);
+            }, 70)
+
+            return () => clearInterval(interval)
         }
-    }, [loadedCount, allImages.length]);
+    }, [loadedCount, allImages.length])
 
     useEffect(() => {
-        if (loadedRef.current) return;
-        loadedRef.current = true;
+        if (loadedRef.current) return
+        loadedRef.current = true
+
         allImages.forEach((src) => {
-            const img = new Image();
-            img.src = src;
+            const img = new Image()
+            img.src = src
             img.onload = img.onerror = () => {
-                setLoadedCount((c) => c + 1);
-            };
-        });
-    }, [allImages]);
+                setLoadedCount((c) => c + 1)
+            }
+        })
+    }, [allImages])
 
     useEffect(() => {
         const timers: number[] = []
@@ -75,22 +88,22 @@ export function SplashScreen({ onFinish }: { onFinish: () => void }) {
         timers.push(
             window.setTimeout(() => {
                 if (loadedCount >= allImages.length) {
-                    setStep(4);
-                    window.setTimeout(onFinish, 100);
+                    setStep(4)
+                    window.setTimeout(onFinish, 100)
                 } else {
                     const check = setInterval(() => {
                         if (loadedCount >= allImages.length) {
-                            clearInterval(check);
-                            setStep(4);
-                            onFinish();
+                            clearInterval(check)
+                            setStep(4)
+                            onFinish()
                         }
-                    }, 100);
+                    }, 100)
                 }
             }, 5600)
-        );
+        )
 
-        return () => timers.forEach((t) => clearTimeout(t));
-    }, [loadedCount, onFinish, allImages.length]);
+        return () => timers.forEach((t) => clearTimeout(t))
+    }, [loadedCount, onFinish, allImages.length])
 
     return (
         <AnimatePresence>
@@ -124,11 +137,26 @@ export function SplashScreen({ onFinish }: { onFinish: () => void }) {
                         </motion.h1>
                     )}
 
+                    {showSkip && loadedCount !== allImages.length && (
+                        <motion.button
+                            onClick={handleSkip}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 1 }}
+                            className="cursor-pointer absolute bottom-12 px-4 py-2 rounded-lg bg-white/10 text-white border border-white/20 hover:bg-white/20 transition"
+                        >
+                            Skip
+                        </motion.button>
+                    )}
+
                     <div className="absolute bottom-4 text-muted-foreground text-xl">
-                        {loadedCount >= allImages.length ? typedText : `Loading Assets (${loadedCount}/${allImages.length})`}
+                        {loadedCount >= allImages.length
+                            ? typedText
+                            : `Loading Assets (${loadedCount}/${allImages.length})`}
                     </div>
                 </motion.div>
             )}
         </AnimatePresence>
-    );
+    )
 }

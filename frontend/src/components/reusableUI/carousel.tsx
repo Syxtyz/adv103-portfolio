@@ -1,7 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import type { ReactNode } from "react";
-import { useTheme } from "../ui/theme-provider";
 
 interface JournalCarouselProps {
     pictures: string[]
@@ -10,7 +9,6 @@ interface JournalCarouselProps {
 }
 
 export default function MyCarousel({ pictures, reverse = false, children }: JournalCarouselProps) {
-    const { theme } = useTheme()
     const [emblaRef] = useEmblaCarousel(
         {
             loop: true,
@@ -48,10 +46,10 @@ export default function MyCarousel({ pictures, reverse = false, children }: Jour
                     </div>
                 </div>
 
-                <div className={`pointer-events-none absolute top-0 -left-4 h-full w-24 bg-linear-to-r ${theme === "dark" ? "from-black" : "from-white"} to-transparent blur-sm`} />
-                <div className={`pointer-events-none absolute top-0 -right-4 h-full w-24 bg-linear-to-l ${theme === "dark" ? "from-black" : "from-white"} to-transparent blur-sm`} />
-                <div className={`pointer-events-none absolute top-0 w-full h-24 bg-linear-to-b ${theme === "dark" ? "from-black" : "from-white"} to-transparent blur-sm`} />
-                <div className={`pointer-events-none absolute bottom-0 w-full h-24 bg-linear-to-t ${theme === "dark" ? "from-black" : "from-white"} to-transparent blur-sm`} />
+                <div className={`pointer-events-none absolute top-0 -left-4 h-full w-24 bg-linear-to-r from-background to-transparent blur-sm`} />
+                <div className={`pointer-events-none absolute top-0 -right-4 h-full w-24 bg-linear-to-l from-background to-transparent blur-sm`} />
+                <div className={`pointer-events-none absolute top-0 w-full h-24 bg-linear-to-b from-background to-transparent blur-sm`} />
+                <div className={`pointer-events-none absolute bottom-0 w-full h-24 bg-linear-to-t from-background to-transparent blur-sm`} />
             </div>
             <div className="flex-1 py-4">
                 {children}

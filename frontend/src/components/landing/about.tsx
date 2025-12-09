@@ -25,7 +25,7 @@ export default function AboutSection() {
                 </p>
             </section>
 
-            <Separator className="mx-2 md:mx-0"/>
+            <Separator/>
 
             <section className="grid gap-4 text-center lg:text-left">
                 <p className="text-2xl font-bold text-primary">Socials</p>

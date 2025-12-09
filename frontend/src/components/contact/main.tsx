@@ -10,9 +10,9 @@ export default function MeetingContent() {
                     <p className="text-4xl font-semibold">Let's Connect</p>
                     <p className="text-muted-foreground text-md">Set up a meeting and take the next step toward achieving your project goals.</p>
                 </div>
-                <Button className="cursor-pointer group gap-1" variant={"secondary"} onClick={() => window.open(calLink, "_blank")}>
-                    Resume
-                    <ArrowUpRight className="duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <Button className="cursor-pointer group gap-1" onClick={() => window.open(calLink, "_blank")}>
+                    <p>Book a Meeting</p>
+                    <ArrowUpRight className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Button>
             </div>
         </main>
