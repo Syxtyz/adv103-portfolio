@@ -3,7 +3,7 @@ import { Separator } from "@/components/ui/separator"
 
 export default function AboutSection() {
     return (
-        <div className="flex flex-col gap-6 flex-2 w-80 md:w-fit">
+        <div className="flex flex-col gap-6 flex-2 md:w-fit">
             <section className="grid gap-4 text-center lg:text-left">
 
                 <p className="text-2xl font-bold text-primary">About me</p>
